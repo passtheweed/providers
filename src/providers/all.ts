@@ -1,4 +1,5 @@
 import { Embed, Sourcerer } from '@/providers/base';
+import { xprimeScraper } from './sources/xprime';
 import { AnimekaiScraper } from './embeds/animekai';
 import { animekaiScraper } from './sources/animekai';
 import { FedAPIScraper } from './sources/fedapi';
@@ -151,6 +152,7 @@ export function gatherAllSources(): Array<Sourcerer> {
     vidlinkScraper,
     vidrockScraper,
     watchanimeworldScraper,
+    xprimeScraper,
   ];
 }
 
