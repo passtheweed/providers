@@ -26,10 +26,10 @@ async function comboScraper(
   const data = await ctx.proxiedFetcher<any>(XPRIME_BASE, {
     query,
     headers: {
-      "User-Agent":
+      "X-User-Agent":
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:150.0) Gecko/20100101 Firefox/150.0",
-      "Origin": "https://pstream.net",
-      "Referer": "https://pstream.net/",
+      "X-Origin": "https://pstream.net",
+      "X-Referer": "https://pstream.net/",
     },
   });
 
@@ -51,8 +51,8 @@ async function comboScraper(
       captions: [],
       flags: [],
       headers: {
-        "Origin": "https://pstream.net",
-        "Referer": "https://pstream.net/",
+        "X-Origin": "https://pstream.net",
+        "X-Referer": "https://pstream.net/",
       },
     });
   }
@@ -70,8 +70,8 @@ async function comboScraper(
       captions: [],
       flags: [],
       headers: {
-        "Origin": "https://pstream.net",
-        "Referer": "https://pstream.net/",
+        "X-Origin": "https://pstream.net",
+        "X-Referer": "https://pstream.net/",
       },
     });
   }
