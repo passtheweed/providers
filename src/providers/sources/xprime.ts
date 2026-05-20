@@ -27,8 +27,9 @@ async function comboScraper(
     query,
     headers: {
       "User-Agent":
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-      Referer: "https://pstream.net/",
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:150.0) Gecko/20100101 Firefox/150.0",
+      "Origin": "https://pstream.net",
+      "Referer": "https://pstream.net/",
     },
   });
 
@@ -42,7 +43,6 @@ async function comboScraper(
 
   const streams: SourcererOutput["stream"] = [];
 
-  // AUTO stream (HLS)
   if (data.streams.AUTO?.url) {
     streams.push({
       id: "auto",
@@ -51,12 +51,12 @@ async function comboScraper(
       captions: [],
       flags: [],
       headers: {
-        Referer: "https://pstream.net/",
+        "Origin": "https://pstream.net",
+        "Referer": "https://pstream.net/",
       },
     });
   }
 
-  // ORG stream (MP4 direct file)
   if (data.streams.ORG?.url) {
     streams.push({
       id: "org",
@@ -70,7 +70,8 @@ async function comboScraper(
       captions: [],
       flags: [],
       headers: {
-        Referer: "https://pstream.net/",
+        "Origin": "https://pstream.net",
+        "Referer": "https://pstream.net/",
       },
     });
   }
